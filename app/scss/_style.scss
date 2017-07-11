@@ -1,0 +1,194 @@
+
+@font-face {
+	font-family: 'OpenSans';
+	src: url('../fonts/OpenSans.eot');
+	src: url('../fonts/OpenSans.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/OpenSans.woff') format('woff'),
+		url('../fonts/OpenSans.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OpenSans-Semibold';
+	src: url('../fonts/OpenSans-Semibold.eot');
+	src: url('../fonts/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/OpenSans-Semibold.woff') format('woff'),
+		url('../fonts/OpenSans-Semibold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OpenSans-Bold';
+	src: url('../fonts/OpenSans-Bold.eot');
+	src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/OpenSans-Bold.woff') format('woff'),
+		url('../fonts/OpenSans-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video  {
+	font-family:'OpenSans';
+	color:#4f4e4e;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+/* ----------------colors---------------- */
+$color-black:#000;
+$color-white:#fff;
+$color-light-grey:#e6e6e6;
+$color-grey:#b4adad;
+$color-bfb-gray:#bfb9b9;
+$color-938-gray:#938e8e;
+$color-4f4-gray:#4f4e4e;
+$color-9898-grey:#d8d8d8;
+$color-blue:#227dd3;
+$color-43a-green:#43a06d;
+$color-5fc-green:#5fc18b;
+$color-44a-green:#44a36f;
+$color-green:#308355;
+$color-red:#e25842;
+/* ----------------/colors---------------- */
+
+
+/* ----------------fonts---------------- */
+$fonts-OpenSans:'OpenSans';
+$fonts-OpenSans-Semibold:'OpenSans-Semibold';
+$fonts-OpenSans-Bold:'OpenSans-Bold';
+/* ----------------/fonts---------------- */
+
+
+
+/* ---------------mixin----------------- */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+	-webkit-box-shadow:inset $left $top $blur $color;
+	-moz-box-shadow:inset $left $top $blur $color;
+	box-shadow:inset $left $top $blur $color;
+	} @else {
+	-webkit-box-shadow: $left $top $blur $color;
+	-moz-box-shadow: $left $top $blur $color;
+	box-shadow: $left $top $blur $color;
+	}
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content; }
+	&:-moz-placeholder  { @content; }
+	&::-moz-placeholder { @content; } 
+	&:-ms-input-placeholder { @content; } 
+}
+
+@function makelongshadow($numero,$color){
+  $box-shadow:-1px 1px #{$color};
+  @for $i from 1 through $numero {
+    $box-shadow: '#{$box-shadow},
+    				-#{$i}px #{$i}px #{$color}';
+  }
+  @return unquote($box-shadow);
+}
+/* box-shadow:makelongshadow(230,#000); */
+/* ---------------/mixin----------------- */
+
+/* ---------------botton----------------- */
+.blue-botton{
+	background: $color-blue;
+	color:$color-white;
+	font-size: 25px;
+	font-family:$fonts-OpenSans-Semibold;
+	text-transform: uppercase;
+	outline: none;
+	cursor: pointer;
+	@include border-radius(3px);
+	border: 1px solid transparent;
+	&:hover{
+		@include box-shadow(2px, 1px, 2px, rgba(0,0,0,0.6));
+	}  
+	&:active{
+		@include box-shadow(2px, 1px, 2px, rgba(0,0,0,0.6)inset);
+	}
+}
+.btn-white{
+	color:$color-white;
+	border: 3px solid $color-white;
+	font-family:$fonts-OpenSans-Semibold;
+	font-size: 27px;
+	padding: 7px 25px;
+	background:transparent;
+	@include border-radius(7px);
+	outline: none;
+	&:hover{
+		@include box-shadow(2px, 1px, 2px, rgba(0,0,0,0.6));
+	} 
+	&:active{
+		@include box-shadow(2px, 1px, 2px, rgba(254,250,250,0.6));
+	}
+
+}
+/* ---------------botton----------------- */
+
+/* ---------------title----------------- */
+.title{
+	font-family:$fonts-OpenSans-Semibold;
+	font-size: 27px;
+	padding: 20px 0;
+	color:$color-black;
+}
+.title-h4{
+	font-family:$fonts-OpenSans-Semibold;
+	font-size: 39px;
+	color:$color-white;
+	padding-bottom: 46px;
+	&__first{
+		padding-top: 20px;
+	}
+}
+.info-slide{
+	max-width: 269px;
+}
+/* ---------------/title----------------- */
+.list{
+	margin-top: 20px;
+	padding-right: 30px;
+
+}
+.camera{
+	color:$color-white;
+	position: absolute;
+	top: 45%;
+	left: 20%;
+	font-size: 50px;
+	box-shadow:makelongshadow(25,rgba(#d3503b, 0.5));
+}
+.file{
+	position: absolute;
+	top: 40%;
+	left: 20%;
+	font-size: 65px;
+	box-shadow:makelongshadow(20,rgba(#398b5e, 0.5));
+}
+.check-and{
+	box-shadow:makelongshadow(300,rgba(#398b5e, 0.5));
+}
