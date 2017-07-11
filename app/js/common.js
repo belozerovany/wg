@@ -1,8 +1,11 @@
 $(document).ready(function(){
-  $('.full_slide').slick();
+  $('.full_slide').slick({
+  	autoplay:true,
+	autoplaySpeed:2000,
+  });
   $('.main_slide').slick({
-  		/*autoplay:true,
-	    autoplaySpeed:3000,*/
+  		autoplay:true,
+	    autoplaySpeed:3000,
 	    dots:true,
   });
 

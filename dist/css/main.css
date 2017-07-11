@@ -382,8 +382,10 @@ header {
     max-width: 432px;
     max-height: 432px;
     padding: 20%; }
-    .main_map__form--name, .main_map__form--email, .main_map__form--comment {
+    .main_map__form--main {
       position: relative;
+      margin-bottom: 30px; }
+    .main_map__form--name, .main_map__form--email, .main_map__form--comment {
       display: block;
       width: 80%;
       padding: 12px 20px;
@@ -429,13 +431,11 @@ header {
 
 #name-error, #email-error {
   position: absolute;
-  top: 0;
-  left: 10%;
+  top: 100%;
+  left: 0;
   color: red;
-  line-height: 16px; }
-
-#email-error {
-  top: 30px; }
+  line-height: 13px;
+  font-size: 12px; }
 
 /* -----------------------------------------------------------------/map------------------------------------------------*/
 /* -----------------------------------------------------------------footer-----------------------------------------------*/
@@ -448,6 +448,7 @@ header {
     color: #fff; }
 
 /* -----------------------------------------------------------------footer-----------------------------------------------*/
+/* -----------------------------------------------------------------media----------------------------------------------*/
 @media screen and (max-width: 768px) {
   .main_slide__ul--li {
     -webkit-box-orient: vertical;

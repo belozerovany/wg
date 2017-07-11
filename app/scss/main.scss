@@ -238,9 +238,11 @@ header{
 	    max-width: 432px;
     	max-height: 432px;
     	padding: 20%; 
-
-		&--name, &--email,&--comment{
+		&--main{
 			position: relative;
+			margin-bottom: 30px;
+		}
+		&--name, &--email,&--comment{
 			display: block;
 			width: 80%;
 			padding: 12px 20px;
@@ -279,14 +281,13 @@ header{
 }
 #name-error, #email-error{
 	position: absolute;
-    top: 0;
-    left: 10%;
+    top: 100%;
+    left: 0;
     color: red;
-    line-height: 16px;
+    line-height: 13px;
+    font-size: 12px;
 }
-#email-error{
-	top: 30px;
-}
+
 /* -----------------------------------------------------------------/map------------------------------------------------*/
 
 /* -----------------------------------------------------------------footer-----------------------------------------------*/
